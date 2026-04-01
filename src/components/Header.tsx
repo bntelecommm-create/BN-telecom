@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useTheme } from '../contexts/ThemeContext';
-import { Globe, Moon, Sun, Menu, X, User } from 'lucide-react';
+import { Globe, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '../lib/utils';
 import { Language } from '../translations';
 
 export default function Header() {
   const { t, language, setLanguage, dir } = useLanguage();
-  const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
 
@@ -85,22 +84,6 @@ export default function Header() {
             )}
           </div>
 
-          {/* Theme Toggle */}
-          <button
-            onClick={toggleTheme}
-            className="p-2 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-          >
-            {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-          </button>
-
-          {/* CTA */}
-          <Link
-            to="/login"
-            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
-          >
-            <User className="w-4 h-4" />
-            {t.wholesaleAccess}
-          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -143,22 +126,7 @@ export default function Header() {
                 </button>
               ))}
             </div>
-            <button
-              onClick={toggleTheme}
-              className="p-2 text-slate-600 dark:text-slate-300 rounded-full bg-slate-100 dark:bg-slate-800"
-            >
-              {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-            </button>
           </div>
-          
-          <Link
-            to="/login"
-            className="flex items-center justify-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <User className="w-4 h-4" />
-            {t.wholesaleAccess}
-          </Link>
         </div>
       )}
     </header>
