@@ -22,11 +22,11 @@ export default function Services() {
             </div>
             <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white">{t.logistics} Global Exprés</h3>
             <p className="text-slate-600 dark:text-slate-400 mb-6">
-              Envíos asegurados y rápidos a Europa, África y Medio Oriente. Gestión aduanera simplificada.
+              Envíos asegurados y rápidos. Gestión aduanera simplificada.
             </p>
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                <CheckCircle2 className="w-4 h-4 text-green-500" /> Entregas 24/48h en UE
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
               </li>
               <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                 <CheckCircle2 className="w-4 h-4 text-green-500" /> Tracking en tiempo real
@@ -48,7 +48,7 @@ export default function Services() {
             </p>
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                <CheckCircle2 className="w-4 h-4 text-green-500" /> 1-2 años según fabricante
+                <CheckCircle2 className="w-4 h-4 text-green-500" /> 6 meses - 1 año según fabricante
               </li>
               <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                 <CheckCircle2 className="w-4 h-4 text-green-500" /> RMA simplificado online
