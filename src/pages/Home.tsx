@@ -42,13 +42,13 @@ export default function Home() {
       {/* Trust Bar */}
       <section className="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-8">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            {/* Logos placeholders */}
-            <div className="text-xl font-bold font-sans tracking-tighter">APPLE</div>
-            <div className="text-xl font-bold font-sans tracking-tighter">SAMSUNG</div>
-            <div className="text-xl font-bold font-sans tracking-tighter">XIAOMI</div>
-            <div className="text-xl font-bold font-sans tracking-tighter">HUAWEI</div>
-            <div className="text-xl font-bold font-sans tracking-tighter">OPPO</div>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-75 grayscale hover:grayscale-0 transition-all duration-500">
+            {/* Brand Logos */}
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Apple_logo.svg" alt="Apple" className="h-10 md:h-12" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Samsung_Logo.svg" alt="Samsung" className="h-10 md:h-12" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Xiaomi_logo.svg" alt="Xiaomi" className="h-10 md:h-12" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Huawei_Standard_logo.svg" alt="Huawei" className="h-10 md:h-12" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/OPPO_LOGO.svg" alt="Oppo" className="h-10 md:h-12" />
           </div>
         </div>
       </section>
