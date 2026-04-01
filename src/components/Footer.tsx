@@ -32,7 +32,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-slate-900 dark:text-white mb-4">{t.contact}</h3>
             <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-              <li>info@bntelecom.com</li>
+              <li>bntelecom@gmail.com</li>
               <li>+34 900 000 000</li>
               <li>Madrid, Spain</li>
             </ul>
