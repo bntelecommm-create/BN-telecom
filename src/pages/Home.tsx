@@ -34,12 +34,6 @@ export default function Home() {
                 {t.requestPriceList}
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link
-                to="/catalog"
-                className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold inline-flex items-center gap-2 backdrop-blur-sm transition-colors"
-              >
-                {t.catalog}
-              </Link>
             </div>
           </motion.div>
         </div>

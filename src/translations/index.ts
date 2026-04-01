@@ -8,7 +8,7 @@ export const translations = {
     about: 'Sobre Nosotros',
     contact: 'Contacto',
     wholesaleAccess: 'Acceso Mayoristas',
-    heroTitle: 'Tu Socio Global en Telefonía al Por Mayor',
+    heroTitle: 'Proveedores mayoristas',
     heroSubtitle: 'Distribución rápida, precios competitivos y stock real de las mejores marcas.',
     requestPriceList: 'Solicitar Lista de Precios',
     globalShipping: 'Envío Global Exprés',
