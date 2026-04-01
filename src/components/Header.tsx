@@ -1,0 +1,166 @@
+import { Link } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useTheme } from '../contexts/ThemeContext';
+import { Globe, Moon, Sun, Menu, X, User } from 'lucide-react';
+import { useState } from 'react';
+import { cn } from '../lib/utils';
+import { Language } from '../translations';
+
+export default function Header() {
+  const { t, language, setLanguage, dir } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
+
+  const navLinks = [
+    { name: t.home, path: '/' },
+    { name: t.catalog, path: '/catalog' },
+    { name: t.services, path: '/services' },
+    { name: t.about, path: '/about' },
+    { name: t.contact, path: '/contact' },
+  ];
+
+  const languages: { code: Language; label: string; flag: string }[] = [
+    { code: 'es', label: 'ES', flag: '🇪🇸' },
+    { code: 'en', label: 'EN', flag: '🇬🇧' },
+    { code: 'fr', label: 'FR', flag: '🇫🇷' },
+    { code: 'ar', label: 'AR', flag: '🇦🇪' },
+  ];
+
+  return (
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-slate-200 dark:border-slate-800">
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2">
+          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-xl leading-none">BN</span>
+          </div>
+          <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white">Telecom</span>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className="text-sm font-medium text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Actions */}
+        <div className="hidden md:flex items-center gap-4">
+          {/* Language Selector */}
+          <div className="relative">
+            <button
+              onClick={() => setIsLangOpen(!isLangOpen)}
+              className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+            >
+              <Globe className="w-4 h-4" />
+              <span>{languages.find(l => l.code === language)?.label}</span>
+            </button>
+            
+            {isLangOpen && (
+              <div className={cn(
+                "absolute top-full mt-2 w-32 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-md shadow-lg py-1",
+                dir === 'rtl' ? 'left-0' : 'right-0'
+              )}>
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      setLanguage(lang.code);
+                      setIsLangOpen(false);
+                    }}
+                    className="w-full text-left px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2"
+                  >
+                    <span>{lang.flag}</span>
+                    <span>{lang.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="p-2 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+          >
+            {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+          </button>
+
+          {/* CTA */}
+          <Link
+            to="/login"
+            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
+          >
+            <User className="w-4 h-4" />
+            {t.wholesaleAccess}
+          </Link>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2 text-slate-600 dark:text-slate-300"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-4 py-4 space-y-4">
+          <nav className="flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="text-sm font-medium text-slate-600 dark:text-slate-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+          
+          <div className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-800">
+            <div className="flex gap-2">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => setLanguage(lang.code)}
+                  className={cn(
+                    "px-2 py-1 rounded text-sm",
+                    language === lang.code ? "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300" : "text-slate-600 dark:text-slate-400"
+                  )}
+                >
+                  {lang.label}
+                </button>
+              ))}
+            </div>
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-slate-600 dark:text-slate-300 rounded-full bg-slate-100 dark:bg-slate-800"
+            >
+              {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+            </button>
+          </div>
+          
+          <Link
+            to="/login"
+            className="flex items-center justify-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <User className="w-4 h-4" />
+            {t.wholesaleAccess}
+          </Link>
+        </div>
+      )}
+    </header>
+  );
+}
