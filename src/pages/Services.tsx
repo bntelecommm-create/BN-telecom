@@ -22,11 +22,11 @@ export default function Services() {
             </div>
             <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white">{t.logistics} Global Exprés</h3>
             <p className="text-slate-600 dark:text-slate-400 mb-6">
-              Envíos asegurados y rápidos a Europa, África y Medio Oriente. Gestión aduanera simplificada.
+              Envíos asegurados y rápidos. Gestión aduanera simplificada.
             </p>
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                <CheckCircle2 className="w-4 h-4 text-green-500" /> Entregas 24/48h en UE
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
               </li>
               <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                 <CheckCircle2 className="w-4 h-4 text-green-500" /> Tracking en tiempo real
@@ -48,7 +48,7 @@ export default function Services() {
             </p>
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                <CheckCircle2 className="w-4 h-4 text-green-500" /> 1-2 años según fabricante
+                <CheckCircle2 className="w-4 h-4 text-green-500" /> 6 meses - 1 año según fabricante
               </li>
               <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                 <CheckCircle2 className="w-4 h-4 text-green-500" /> RMA simplificado online
@@ -68,30 +68,11 @@ export default function Services() {
             <p className="text-slate-600 dark:text-slate-400 mb-6">
               Dispositivos Grado A/B testeados con software certificado (PhoneCheck/Blancco).
             </p>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                <CheckCircle2 className="w-4 h-4 text-green-500" /> Test de 40+ puntos
-              </li>
-              <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                <CheckCircle2 className="w-4 h-4 text-green-500" /> Batería &gt;85% garantizada
-              </li>
-              <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                <CheckCircle2 className="w-4 h-4 text-green-500" /> Limpieza antibacteriana
-              </li>
-            </ul>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-200 dark:border-slate-800 pt-16">
-          <div className="text-center">
-            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">24h</div>
-            <div className="text-sm text-slate-600 dark:text-slate-400">Tiempo medio de envío</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">50+</div>
-            <div className="text-sm text-slate-600 dark:text-slate-400">Países de destino</div>
-          </div>
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-2 gap-8 border-t border-slate-200 dark:border-slate-800 pt-16 justify-center">
           <div className="text-center">
             <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">99%</div>
             <div className="text-sm text-slate-600 dark:text-slate-400">Satisfacción B2B</div>

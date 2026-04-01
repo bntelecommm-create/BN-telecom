@@ -67,7 +67,15 @@ export default function About() {
                 </li>
               </ul>
             </div>
-            <div className="bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center min-h-[400px]">
+            <div
+              className="min-h-[400px]"
+              style={{
+                backgroundImage: "url('https://cdn.builder.io/api/v1/image/assets%2F3554714344224f479c956e442302085c%2Fe63f89e3267c4ab9aeda470bf487f88c')",
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: 'cover'
+              }}
+            >
               <div className="w-full h-full bg-slate-900/20 backdrop-blur-[2px]"></div>
             </div>
           </div>

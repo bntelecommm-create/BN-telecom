@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-slate-900 text-white overflow-hidden py-24 lg:py-32">
+      <section className="relative bg-slate-900 text-white overflow-hidden py-40 lg:py-56">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
         
@@ -34,12 +34,6 @@ export default function Home() {
                 {t.requestPriceList}
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link
-                to="/catalog"
-                className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold inline-flex items-center gap-2 backdrop-blur-sm transition-colors"
-              >
-                {t.catalog}
-              </Link>
             </div>
           </motion.div>
         </div>
@@ -48,13 +42,13 @@ export default function Home() {
       {/* Trust Bar */}
       <section className="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-8">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            {/* Logos placeholders */}
-            <div className="text-xl font-bold font-sans tracking-tighter">APPLE</div>
-            <div className="text-xl font-bold font-sans tracking-tighter">SAMSUNG</div>
-            <div className="text-xl font-bold font-sans tracking-tighter">XIAOMI</div>
-            <div className="text-xl font-bold font-sans tracking-tighter">HUAWEI</div>
-            <div className="text-xl font-bold font-sans tracking-tighter">OPPO</div>
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-75 grayscale hover:grayscale-0 transition-all duration-500">
+            {/* Brand Logos */}
+            <img src="https://cdn.builder.io/api/v1/image/assets%2F3554714344224f479c956e442302085c%2F4ec03d0d725746d197208dc4c829dad1?format=webp&width=800&height=1200" alt="Apple" className="h-14 md:h-16 object-contain" />
+            <img src="https://cdn.builder.io/api/v1/image/assets%2F3554714344224f479c956e442302085c%2F072577e8bbc842e7965d817abc45f025?format=webp&width=800&height=1200" alt="Samsung" className="h-14 md:h-16 object-contain" />
+            <img src="https://cdn.builder.io/api/v1/image/assets%2F3554714344224f479c956e442302085c%2F30f31311525a41458680a2bf8f5163c1?format=webp&width=800&height=1200" alt="Xiaomi" className="h-14 md:h-16 object-contain" />
+            <img src="https://cdn.builder.io/api/v1/image/assets%2F3554714344224f479c956e442302085c%2Fdcd95ece7ff14122be19dcaccf6f1344?format=webp&width=800&height=1200" alt="Huawei" className="h-14 md:h-16 object-contain" />
+            <img src="https://cdn.builder.io/api/v1/image/assets%2F3554714344224f479c956e442302085c%2F3d5696493eb342218faa136c463ceccc?format=webp&width=800&height=1200" alt="Oppo" className="h-14 md:h-16 object-contain" />
           </div>
         </div>
       </section>
@@ -105,43 +99,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="py-20 bg-white dark:bg-slate-950">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-end mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white">{t.featuredProducts}</h2>
-            <Link to="/catalog" className="text-blue-600 hover:text-blue-700 font-medium hidden sm:flex items-center gap-1">
-              {t.catalog} <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { name: 'iPhone 15 Pro Max', brand: 'Apple', spec: '256GB / EU Spec', condition: 'New' },
-              { name: 'Galaxy S24 Ultra', brand: 'Samsung', spec: '512GB / Global', condition: 'New' },
-              { name: 'iPhone 14 Pro', brand: 'Apple', spec: '128GB / US Spec', condition: 'Grade A' },
-              { name: 'Xiaomi 14 Pro', brand: 'Xiaomi', spec: '256GB / Global', condition: 'New' },
-            ].map((product, i) => (
-              <div key={i} className="group border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-lg transition-all bg-slate-50 dark:bg-slate-900">
-                <div className="aspect-square bg-slate-200 dark:bg-slate-800 relative overflow-hidden flex items-center justify-center">
-                  <div className="w-3/4 h-3/4 bg-slate-300 dark:bg-slate-700 rounded-lg shadow-inner"></div>
-                  <div className="absolute top-3 right-3 bg-white dark:bg-slate-950 text-xs font-bold px-2 py-1 rounded shadow-sm">
-                    {product.brand}
-                  </div>
-                </div>
-                <div className="p-5">
-                  <h4 className="font-bold text-lg mb-1 text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">{product.name}</h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">{product.spec} • {product.condition}</p>
-                  
-                  <Link to="/login" className="block w-full text-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-white py-2 rounded-lg text-sm font-medium transition-colors">
-                    {t.loginToViewPrices}
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Multilingual Welcome */}
       <section className="py-20 bg-blue-600 text-white">
