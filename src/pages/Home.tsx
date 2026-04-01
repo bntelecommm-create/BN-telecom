@@ -42,13 +42,13 @@ export default function Home() {
       {/* Trust Bar */}
       <section className="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-8">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-75 grayscale hover:grayscale-0 transition-all duration-500">
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-75 grayscale hover:grayscale-0 transition-all duration-500">
             {/* Brand Logos */}
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Apple_logo.svg" alt="Apple" className="h-10 md:h-12" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Samsung_Logo.svg" alt="Samsung" className="h-10 md:h-12" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Xiaomi_logo.svg" alt="Xiaomi" className="h-10 md:h-12" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Huawei_Standard_logo.svg" alt="Huawei" className="h-10 md:h-12" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/OPPO_LOGO.svg" alt="Oppo" className="h-10 md:h-12" />
+            <img src="https://cdn.builder.io/api/v1/image/assets%2F3554714344224f479c956e442302085c%2F4ec03d0d725746d197208dc4c829dad1?format=webp&width=800&height=1200" alt="Apple" className="h-14 md:h-16 object-contain" />
+            <img src="https://cdn.builder.io/api/v1/image/assets%2F3554714344224f479c956e442302085c%2F072577e8bbc842e7965d817abc45f025?format=webp&width=800&height=1200" alt="Samsung" className="h-14 md:h-16 object-contain" />
+            <img src="https://cdn.builder.io/api/v1/image/assets%2F3554714344224f479c956e442302085c%2F30f31311525a41458680a2bf8f5163c1?format=webp&width=800&height=1200" alt="Xiaomi" className="h-14 md:h-16 object-contain" />
+            <img src="https://cdn.builder.io/api/v1/image/assets%2F3554714344224f479c956e442302085c%2Fdcd95ece7ff14122be19dcaccf6f1344?format=webp&width=800&height=1200" alt="Huawei" className="h-14 md:h-16 object-contain" />
+            <img src="https://cdn.builder.io/api/v1/image/assets%2F3554714344224f479c956e442302085c%2F3d5696493eb342218faa136c463ceccc?format=webp&width=800&height=1200" alt="Oppo" className="h-14 md:h-16 object-contain" />
           </div>
         </div>
       </section>
