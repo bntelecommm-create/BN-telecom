@@ -72,7 +72,7 @@ export default function Services() {
         </div>
 
         {/* Stats */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-200 dark:border-slate-800 pt-16">
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-2 gap-8 border-t border-slate-200 dark:border-slate-800 pt-16 justify-center">
           <div className="text-center">
             <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">99%</div>
             <div className="text-sm text-slate-600 dark:text-slate-400">Satisfacción B2B</div>
