@@ -13,7 +13,6 @@ export default function Header() {
 
   const navLinks = [
     { name: t.home, path: '/' },
-    { name: t.catalog, path: '/catalog' },
     { name: t.services, path: '/services' },
     { name: t.about, path: '/about' },
     { name: t.contact, path: '/contact' },
