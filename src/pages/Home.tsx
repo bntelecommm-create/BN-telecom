@@ -40,7 +40,7 @@ export default function Home() {
       </section>
 
       {/* Trust Bar */}
-      <section className="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-8">
+      <section className="border-b border-slate-200 bg-white py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-75 grayscale hover:grayscale-0 transition-all duration-500">
             {/* Brand Logos */}
@@ -54,44 +54,44 @@ export default function Home() {
       </section>
 
       {/* Value Proposition */}
-      <section className="py-20 bg-slate-50 dark:bg-slate-900">
+      <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <motion.div 
               whileHover={{ y: -5 }}
-              className="bg-white dark:bg-slate-950 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800"
+              className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100"
             >
-              <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400">
+              <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-blue-600">
                 <Globe className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">{t.globalShipping}</h3>
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+              <h3 className="text-xl font-bold mb-3 text-slate-900">{t.globalShipping}</h3>
+              <p className="text-slate-600 leading-relaxed">
                 {t.globalShippingDesc}
               </p>
             </motion.div>
 
             <motion.div 
               whileHover={{ y: -5 }}
-              className="bg-white dark:bg-slate-950 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800"
+              className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100"
             >
-              <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400">
+              <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-blue-600">
                 <ShieldCheck className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">{t.certifiedWarranty}</h3>
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+              <h3 className="text-xl font-bold mb-3 text-slate-900">{t.certifiedWarranty}</h3>
+              <p className="text-slate-600 leading-relaxed">
                 {t.certifiedWarrantyDesc}
               </p>
             </motion.div>
 
             <motion.div 
               whileHover={{ y: -5 }}
-              className="bg-white dark:bg-slate-950 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800"
+              className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100"
             >
-              <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400">
+              <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-blue-600">
                 <TrendingUp className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">{t.dynamicPricing}</h3>
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+              <h3 className="text-xl font-bold mb-3 text-slate-900">{t.dynamicPricing}</h3>
+              <p className="text-slate-600 leading-relaxed">
                 {t.dynamicPricingDesc}
               </p>
             </motion.div>
