@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useTheme } from '../contexts/ThemeContext';
 import { Globe, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '../lib/utils';
@@ -26,14 +25,14 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-slate-200 dark:border-slate-800">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-slate-200">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-xl leading-none">BN</span>
           </div>
-          <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white">Telecom</span>
+          <span className="font-bold text-xl tracking-tight text-slate-900">Telecom</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -42,7 +41,7 @@ export default function Header() {
             <Link
               key={link.path}
               to={link.path}
-              className="text-sm font-medium text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors"
+              className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors"
             >
               {link.name}
             </Link>
@@ -55,7 +54,7 @@ export default function Header() {
           <div className="relative">
             <button
               onClick={() => setIsLangOpen(!isLangOpen)}
-              className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+              className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900"
             >
               <Globe className="w-4 h-4" />
               <span>{languages.find(l => l.code === language)?.label}</span>
@@ -63,7 +62,7 @@ export default function Header() {
             
             {isLangOpen && (
               <div className={cn(
-                "absolute top-full mt-2 w-32 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-md shadow-lg py-1",
+                "absolute top-full mt-2 w-32 bg-white border border-slate-200 rounded-md shadow-lg py-1",
                 dir === 'rtl' ? 'left-0' : 'right-0'
               )}>
                 {languages.map((lang) => (
@@ -73,7 +72,7 @@ export default function Header() {
                       setLanguage(lang.code);
                       setIsLangOpen(false);
                     }}
-                    className="w-full text-left px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2"
+                    className="w-full text-left px-4 py-2 text-sm hover:bg-slate-100 flex items-center gap-2"
                   >
                     <span>{lang.flag}</span>
                     <span>{lang.label}</span>
@@ -87,7 +86,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-slate-600 dark:text-slate-300"
+          className="md:hidden p-2 text-slate-600"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -96,13 +95,13 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-4 py-4 space-y-4">
+        <div className="md:hidden border-t border-slate-200 bg-white px-4 py-4 space-y-4">
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className="text-sm font-medium text-slate-600 dark:text-slate-300"
+                className="text-sm font-medium text-slate-600"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
@@ -110,7 +109,7 @@ export default function Header() {
             ))}
           </nav>
           
-          <div className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-800">
+          <div className="flex items-center justify-between pt-4 border-t border-slate-200">
             <div className="flex gap-2">
               {languages.map((lang) => (
                 <button
@@ -118,7 +117,7 @@ export default function Header() {
                   onClick={() => setLanguage(lang.code)}
                   className={cn(
                     "px-2 py-1 rounded text-sm",
-                    language === lang.code ? "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300" : "text-slate-600 dark:text-slate-400"
+                    language === lang.code ? "bg-blue-100 text-blue-700" : "text-slate-600"
                   )}
                 >
                   {lang.label}
